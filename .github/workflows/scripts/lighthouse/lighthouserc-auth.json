@@ -32,7 +32,8 @@
 			"isSinglePageApplication": true,
 			"settings": {
 				"disableStorageReset": true
-			}
+			},
+			"chromePath": "/usr/bin/google-chrome-stable"
 		},
 		"upload": {
 			"target": "temporary-public-storage"
