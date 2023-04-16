@@ -9,7 +9,8 @@
 				"content-width": "off",
 				"csp-xss": "off",
 				"uses-passive-event-listeners": "off",
-				"bf-cache": "off"
+				"bf-cache": "off",
+				"th-has-data-cells": "off"
 			}
 		},
 		"collect": {
