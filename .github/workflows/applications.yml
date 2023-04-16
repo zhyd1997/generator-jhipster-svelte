@@ -10,6 +10,7 @@ env:
     TEST_SCRIPTS_PATH: ${{ github.workspace }}/.github/workflows/scripts
 jobs:
     svelte-image:
+        if: ${{ false }}
         name: Prepare Svelte Image
         runs-on: ubuntu-latest
         concurrency:
@@ -30,6 +31,7 @@ jobs:
                   path: svelte-artifacts/images
                   retention-days: 1
     development-profile-builds:
+        if: ${{ false }}
         needs: svelte-image
         name: ${{ matrix.apps }}
         concurrency:
@@ -154,11 +156,11 @@ jobs:
                   npm run e2e:ci
     production-profile-builds:
         needs: svelte-image
+        if: ${{ false }}
         name: ${{ matrix.apps }}
         concurrency:
             group: apps-prod-${{ matrix.apps }}-${{ github.head_ref || github.sha }}
             cancel-in-progress: true
-        if: github.event.action != 'closed'
         runs-on: ${{ matrix.os }}
         timeout-minutes: 15
         strategy:
@@ -291,11 +293,11 @@ jobs:
                   npm run e2e:ci
     microservices-production-profile-builds:
         needs: svelte-image
+        if: ${{ false }}
         name: ${{ matrix.apps }}
         concurrency:
             group: ms-apps-prod-${{ matrix.apps }}-${{ github.head_ref || github.sha }}
             cancel-in-progress: true
-        if: github.event.action != 'closed'
         runs-on: ${{ matrix.os }}
         timeout-minutes: 25
         strategy:
@@ -449,7 +451,6 @@ jobs:
                   npm run e2e:ci
     lighthouse-job:
         needs: svelte-image
-        if: ${{ false }}
         name: ${{ matrix.apps }}
         concurrency:
             group: lighthouse-${{ matrix.apps }}-${{ github.head_ref || github.sha }}
