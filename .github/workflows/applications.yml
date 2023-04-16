@@ -10,7 +10,6 @@ env:
     TEST_SCRIPTS_PATH: ${{ github.workspace }}/.github/workflows/scripts
 jobs:
     svelte-image:
-        if: ${{ false }}
         name: Prepare Svelte Image
         runs-on: ubuntu-latest
         concurrency:
