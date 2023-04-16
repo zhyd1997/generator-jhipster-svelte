@@ -8,7 +8,8 @@
 				"non-composited-animations": "off",
 				"content-width": "off",
 				"csp-xss": "off",
-				"uses-passive-event-listeners": "off"
+				"uses-passive-event-listeners": "off",
+				"bf-cache": "off"
 			}
 		},
 		"collect": {
