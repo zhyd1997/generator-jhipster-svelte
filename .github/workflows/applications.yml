@@ -525,6 +525,7 @@ jobs:
             - name: Run Lighthouse tests - Unauthenticated Pages
               run: |
                   cd "$HOME/svelte-app"
+                  which google-chrome-stable
                   cp $TEST_SCRIPTS_PATH/lighthouse/lighthouserc.json lighthouserc.json
                   lhci autorun
               env:
